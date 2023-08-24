@@ -1,16 +1,20 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { ComponentitoComponent } from './componentito/componentito.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, RouterOutlet, DashboardComponent],
+  imports: [CommonModule, RouterOutlet, ComponentitoComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Angular0';
+  message = 'from app component';
+
+  handleClick() {
+    this.message = 'clicked at the app component';
+  }
 }

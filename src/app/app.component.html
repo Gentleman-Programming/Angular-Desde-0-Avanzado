@@ -1,2 +1,8 @@
-<app-dashboard/>
+<app-componentito [(message)]="message">
+  <button (click)="handleClick()">Click</button>
+  <p>{{ message }}</p>
+</app-componentito>
+
+<!-- Composition Pattern -->
+
 <router-outlet></router-outlet>
