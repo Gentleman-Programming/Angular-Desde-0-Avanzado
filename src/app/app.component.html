@@ -1,8 +1,57 @@
-<app-componentito [(message)]="message">
-  <button (click)="handleClick()">Click</button>
-  <p>{{ message }}</p>
-</app-componentito>
-
-<!-- Composition Pattern -->
-
 <router-outlet></router-outlet>
+
+<!-- Atributos -->
+<div [ngStyle]="{ color: condition ? 'blue' : 'red' }">Style</div>
+<div [ngClass]="condition ? 'green' : 'red'">Class</div>
+
+<!-- Estructurales -->
+<div *ngIf="condition">Me renderice</div>
+<ul>
+  <ng-container
+    *ngFor="let item of arreglito; let i = index; trackBy: trackByFn"
+  >
+    <li *ngIf="i <= arreglito.length - 2">{{ item.name + i }}</li>
+  </ng-container>
+</ul>
+
+<p>
+  <b>condition: {{ condition }}</b>
+  <span *appUnless="condition">I'm rendered</span>
+</p>
+
+<ng-container [ngSwitch]="selectedOption">
+  <p *ngSwitchCase="'uno'" appHighlight>Soy el uno</p>
+  <h2 *ngSwitchCase="'dos'">Soy el dos</h2>
+  <ng-container *ngSwitchCase="'tres'" [ngTemplateOutlet]="numeroTresTemplate">
+  </ng-container>
+</ng-container>
+
+<ng-template #numeroTresTemplate>
+  <ul>
+    <ng-container
+      *ngFor="let item of arreglito; let i = index; trackBy: trackByFn"
+    >
+      <li *ngIf="i <= arreglito.length - 2">{{ item.name + i }}</li>
+    </ng-container>
+  </ul>
+</ng-template>
+
+<!-- Templates -->
+<ng-container>Dom</ng-container>
+<ng-template #template> Esto es un template </ng-template>
+
+<!-- NgIf por Angular -->
+<ng-template [ngIf]="condition">
+  <div>Me renderice</div>
+</ng-template>
+
+<!-- NgFor por Angular -->
+<!-- <ng-template -->
+<!--   ngFor -->
+<!--   let-item -->
+<!--   [ngForOf]="arreglito" -->
+<!--   let-i="index" -->
+<!--   [ngForTrackBy]="i" -->
+<!-- > -->
+<!--   <div>{{ item }}</div> -->
+<!-- </ng-template> -->
