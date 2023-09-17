@@ -20,6 +20,8 @@
 
 🌐 ¡Explora más en el siguiente [link](https://linktr.ee/gentlemanprogramming)
 
+Lista de reproducción del curso en YouTube: [link](https://www.youtube.com/playlist?list=PL42UNLc8e48RINrNGumxAKulG5CWgs_yv)
+
 ## Datos de compilación
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
